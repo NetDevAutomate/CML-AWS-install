@@ -1,0 +1,14 @@
+#!/bin/bash
+
+while read local_ref local_sha remote_ref remote_sha
+do
+    # If pushing to GitHub, prevent ssm-tunnel-guide-amazon.md from being pushed
+    if [[ "$remote_ref" == *"github"* ]]; then
+        if git show $local_sha:ssm-tunnel-guide-amazon.md > /dev/null 2>&1; then
+            echo "Preventing push of ssm-tunnel-guide-amazon.md to GitHub"
+            exit 1
+        fi
+    fi
+done
+
+exit 0

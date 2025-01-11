@@ -1,0 +1,27 @@
+# Default behavior
+* text=auto eol=lf
+
+# Terraform files
+*.tf text
+*.tfvars text
+*.hcl text
+
+# Shell scripts
+*.sh text eol=lf
+*.bash text eol=lf
+
+# Python files
+*.py text diff=python
+
+# Documentation
+*.md text diff=markdown
+ssm-tunnel-guide-amazon.md filter=gitlab-only
+
+# YAML files
+*.yml text
+*.yaml text
+
+# Config files
+.editorconfig text
+.gitattributes text
+.gitignore text
